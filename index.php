@@ -11,45 +11,210 @@
 <body>
 
     <?php require 'system/menu.php';?>
-    <header>
-    <div class="nav-brand">
-  <h1 style="font-size: 4rem; color: #ffffff; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); font-weight: bold; margin-bottom: 0.5em;">
-    Surga Tersembunyi di Sumatera Utara
-  </h1>
-  <p style="font-size: 2rem; color: white; text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); font-style: italic; font-weight: bold;">
-    Nikmati Keindahan Alam, Keanekaragaman Budaya, dan Keunikan Karya
-</p>
-
-</div>
-
-  </header>
 
 
 
- <section class="about pt-0 pt-md-5 mb-2 mb-md-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="why-we-text-area about-text-area-2">
-                        <div class="default-section-title">
-                            <span style="color: black; font-size: 1.2em;">Budaya Horas Eco Wisata</span>
-                            
+<section class="about pt-0 pt-md-5 mb-2 mb-md-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="why-we-text-area about-text-area-2">
+                    <div class="default-section-title">
+                        <span style="font-size: 30px; color: #FF5733;">BUDAYA</span>
+                        
                         <?php
                         $stmt345q = $mysqli->prepare("SELECT * FROM sejarah");
                         $stmt345q->execute();
                         $result345q = $stmt345q->get_result();
-                        if ($result345q->num_rows === 0) {
-                        } else {
-                            $row345q = $result345q->fetch_assoc(); { ?>
-                                <p><?php echo $row345q['isi']; ?></p>
-                            <?php }
-                        } ?>
+                        if ($result345q->num_rows > 0) {
+                            $row345q = $result345q->fetch_assoc(); ?>
+                            <p><?php echo $row345q['isi']; ?></p>
+                        <?php } ?>
+
+                        <!-- Artikel Terkait -->
+                        <span style="font-size: 30px; color: #FF5733;">ARTIKEL TERKAIT</span>
+                        <p>Jelajahi lebih lanjut tentang Budaya Horas Eco Wisata melalui artikel kami.</p>
+
+                      
+
+
+                        <style>
+    /* Styling container untuk layout grid dengan maksimal 4 kolom */
+    .thumbnail-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Membatasi 4 video per baris */
+        gap: 20px;
+        justify-items: center;
+        margin-top: 20px;
+    }
+
+    /* Styling untuk setiap card video */
+    .video-card {
+        position: relative;
+        width: 100%; /* Menyesuaikan lebar sesuai kolom */
+        max-width: 300px; /* Membatasi lebar maksimal */
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Efek hover */
+    .video-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Styling untuk deskripsi */
+    .video-card p {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    /* Responsif: mengurangi jumlah kolom pada layar kecil */
+    @media (max-width: 768px) {
+        .thumbnail-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom per baris di layar sedang */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .thumbnail-container {
+            grid-template-columns: 1fr; /* 1 kolom per baris di layar kecil */
+        }
+    }
+</style>
+
+
+
+
+
+                        <!-- Konten Video -->
+                        <span style="font-size: 30px; color: #FF5733;">KONTEN VIDEO</span>
+                        <p>Ikuti kami di sosial media untuk melihat konten video terbaru:</p>
+
+                        <!-- Contoh video YouTube -->
+                        <div class="video-container" style="display: flex; gap: 15px;">
+    <!-- <div>
+        <a href="https://www.youtube.com/watch?v=YfEIdI2ZaW8" target="_blank">
+        <img src="https://img.youtube.com/vi/YfEIdI2ZaW8/0.jpg" alt="Thumbnail Video" style="width: 100%; max-width: 300px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+        <p>Ponot Nih Gais</p>
+        </a>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+    /* Styling container untuk layout grid dengan maksimal 4 kolom */
+    .thumbnail-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Membatasi 4 video per baris */
+        gap: 20px;
+        justify-items: center;
+        margin-top: 20px;
+    }
+
+    /* Styling untuk setiap card video */
+    .video-card {
+        position: relative;
+        width: 100%; /* Menyesuaikan lebar sesuai kolom */
+        max-width: 300px; /* Membatasi lebar maksimal */
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Efek hover */
+    .video-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Styling untuk deskripsi */
+    .video-card p {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    /* Responsif: mengurangi jumlah kolom pada layar kecil */
+    @media (max-width: 768px) {
+        .thumbnail-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 kolom per baris di layar sedang */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .thumbnail-container {
+            grid-template-columns: 1fr; /* 1 kolom per baris di layar kecil */
+        }
+    }
+</style>
+
+<div class="thumbnail-container">
+    <a href="https://www.instagram.com/reel/DAgLP8tKb98/?igsh=dzM4OXpheHJjbnFq" target="_blank" class="video-card">
+        <iframe src="https://www.instagram.com/reel/DAgLP8tKb98/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <p>Ponot Nih Gais</p>
+    </a>
+
+    <a href="https://www.instagram.com/reel/DAVAEVEOFhr/?igsh=N2N3Mm03NW55NzVw" target="_blank" class="video-card">
+        <iframe src="https://www.instagram.com/reel/DAVAEVEOFhr/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <p>Ponot Nih Gais</p>
+    </a>
+
+    <a href="https://www.instagram.com/reel/DAgLP8tKb98/?igsh=dzM4OXpheHJjbnFq" target="_blank" class="video-card">
+        <iframe src="https://www.instagram.com/reel/DAgLP8tKb98/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <p>Ponot Nih Gais</p>
+    </a>
+    <a href="https://www.instagram.com/reel/DAVAEVEOFhr/?igsh=N2N3Mm03NW55NzVw" target="_blank" class="video-card">
+        <iframe src="https://www.instagram.com/reel/DAVAEVEOFhr/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <p>Ponot Nih Gais</p>
+    </a>
+
+
+
+
+    <a href="https://www.instagram.com/reel/DAgLP8tKb98/?igsh=dzM4OXpheHJjbnFq" target="_blank" class="video-card">
+        <iframe src="https://www.instagram.com/reel/DAgLP8tKb98/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <p>Ponot Nih Gais</p>
+    </a>
+
+    <a href="https://www.instagram.com/reel/DAVAEVEOFhr/?igsh=N2N3Mm03NW55NzVw" target="_blank" class="video-card">
+        <iframe src="https://www.instagram.com/reel/DAVAEVEOFhr/embed" width="300" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <p>Ponot Nih Gais</p>
+    </a>
+
+</div>
+
+</div>
+
+
+
+
+
+                       
+                        
+
+                        <!-- Tambahkan lebih banyak video sesuai kebutuhan -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 
 
@@ -62,7 +227,7 @@
                     <div class="why-we-text-area about-text-area-2">
                         <div class="default-section-title">
                             <span></span>
-                            <h3><?php echo $rowpengaturanweb['namaweb'];?></h3>
+                            <h4 style="font-weight: bold;">RUMAH BUMN HUMBANG HASANDUTAN</h4>
                             <?php
                             $stmt = $mysqli->prepare("SELECT * FROM visi");
                             $stmt->execute();
@@ -79,7 +244,7 @@
                     <div class="why-we-text-area about-text-area-2">
                         <div class="default-section-title">
                             <span></span>
-                            <h3><?php echo $rowpengaturanweb['namaweb'];?></h3>
+                            <h4 style="font-weight: bold;">RUMAH BUMN TOBA</h4>
                             <?php
                             $stmtv123 = $mysqli->prepare("SELECT * FROM misi");
                             $stmtv123->execute();
@@ -102,7 +267,7 @@
                 <div class="col-12">
                     <div class="why-we-text-area about-text-area-2">
                         <div class="default-section-title">
-                            <span>Sejarah</span>
+                            <span style="font-size: 30px; color: #FF5733;">PAKET</span>
                             <h3><?php echo $rowpengaturanweb['namaweb'];?></h3>
                             <?php
                             $stmt345q = $mysqli->prepare("SELECT * FROM sejarah");
@@ -124,7 +289,7 @@
                 <div class="col-12">
                     <div class="why-we-text-area about-text-area-2">
                         <div class="default-section-title">
-                            <span>Galeri</span>
+                            <span style="font-size: 30px; color: #FF5733;">GALERI</span>
                             <h3><?php echo $rowpengaturanweb['namaweb'];?></h3>
                         </div>
                     </div>
@@ -152,7 +317,7 @@
                 <div class="col-12">
                     <div class="why-we-text-area about-text-area-2">
                         <div class="default-section-title">
-                            <span>Berita</span>
+                            <span style="font-size: 30px; color: #FF5733;">ARTIKEL</span>
                             <h3><?php echo $rowpengaturanweb['namaweb'];?></h3>
                         </div>
                     </div>
